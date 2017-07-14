@@ -1,0 +1,102 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.imgwrapper {
+   width: 20%;
+}
+
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.btn-default {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Styles go here */
+
+body{
+    font-family: "Eau Naturelle", "Helvetica", "Arial", "Lucida Grande", "Gill Sans", "Verdana", sans-serif;
+  font-weight:100;
+  color: #444;
+ background-color: #ddd; 
+}
+
+#canvas{
+  border-bottom: 1px solid rgba(0,0,0,0.3); 
+  background-color: #FFF;
+  box-shadow: 0 9px 20px -5px rgba(0,0,0,0.8);
+}
+
+#d{
+  text-align: center;
+}
+
+h1{
+  color: #444;
+  font-family: "Eau Naturelle", "Helvetica", "Arial", "Lucida Grande", "Gill Sans", "Verdana", sans-serif;
+  font-weight: 500;
+}
+
+a{
+  color: #4a9;
+  text-decoration:none;
+  font-style:italic;
+  font-weight: 800;
+}
+
+#load-font {
+    font-family: "DinProCond";
+}
+
+
+span {
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
+}
+
+span:hover {
+    text-decoration:none;
+    text-shadow: 1px 1px 1px #555;
+}
+
+
+ 
+ .wrapper {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* img {
+  position: absolute;
+  left: 0;
+  top: 0;
+} */
+
+.signature-pad {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100px;
+}

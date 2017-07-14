@@ -1,0 +1,493 @@
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="webcam.js"></script>
+<script src="//code.angularjs.org/1.1.3/angular.js"></script>
+
+<!-- <div class="wrapper">
+
+		img src="http://www.licensing.biz/cimages/c0f1a3a97bc0de97271f9813f7715bb3.png"
+			<img src = "./app/images/Car.png" width="100%" height="100%" />
+		
+	<canvas id="signature-pad" class="signature-pad" width="100%" height="100%"></canvas>
+</div>
+<div>
+	<button id="save">Save</button>
+	<button id="clear">Clear</button>
+</div> -->
+
+<!-- <div class="panel-heading">Select Damage Area</div>
+<div class="wrapper">
+
+	img src="http://www.licensing.biz/cimages/c0f1a3a97bc0de97271f9813f7715bb3.png"
+	<img src="./app/images/Car.png" width="100%" height="100%" />
+
+	<canvas id="signature-pad" class="signature-pad" width="100%"
+		height="100%"></canvas>
+</div> -->
+
+<div class="jumbotron">
+	<div class="container">
+		<!-- <ng2-webcam [options]="options" [onSuccess]="onSuccess" [onError]="onError"></ng2-webcam> -->
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Renter Details</div>
+
+			<!-- Table -->
+			<table class="table">
+				<tbody>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Renter
+								Name</font></td>
+						<td width="70%">{{firstName}} {{lastName}}</td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Vehicle
+								Make/Model</font></td>
+						<td width="70%">{{makeModelDesc}}</td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Check
+								out date</font></td>
+						<td width="70%">{{coDate}}</td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Check
+								in Date</font></td>
+						<td width="70%">{{ciDate}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Incident Details</div>
+
+			<!-- Table -->
+			<table class="table">
+				<tbody>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Date
+								of Incident</font></td>
+						<td width="70%"><input id="incidentDate" type="date"
+							value="2017-07-14"><input id="incidentTime" type="time"></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">City</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Location of Incident"
+									aria-describedby="basic-addon1" [(ngModel)]="incidentCity"
+									name="incidentCity">
+							</div></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">State</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Incident State" aria-describedby="basic-addon1"
+									[(ngModel)]="incidentState" name="incidentState">
+							</div></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Zip
+								code</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Incident Zip Code" aria-describedby="basic-addon1"
+									[(ngModel)]="incidentZipCode" name="incidentZipCode">
+							</div></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Police
+								Rpt #</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Police Dept/Report #"
+									aria-describedby="basic-addon1" [(ngModel)]="incidentPoliceRpt"
+									name="incidentPoliceRpt">
+							</div></td>
+				</tbody>
+			</table>
+		</div>
+		<br />
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Insurance Details</div>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Name</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Operators Insurance Co."
+									aria-describedby="basic-addon1" [(ngModel)]="insuranceName"
+									name="insuranceName">
+
+							</div></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Address</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Operators Insurance Co."
+									aria-describedby="basic-addon1" [(ngModel)]="insuranceAddress"
+									name="insuranceAddress">
+							</div></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Policy
+								Number</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Enter Policy Number"
+									aria-describedby="basic-addon1" [(ngModel)]="policyNumber"
+									name="policyNumber">
+							</div></td>
+					</tr>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Is
+								Operator's Details same as Renter ?</font></td>
+						<td width="70%">
+							<!-- <div class="checkbox">
+								<label> <input type="checkbox" data-toggle="toggle-one"
+									(click)="toggleRenter()">
+
+								</label>
+							</div> --> <ui-switch color="red" (change)="toggleRenter()"></ui-switch>
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div *ngIf="operatorNotRenter">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Name</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Person operating vehicle"
+										aria-describedby="basic-addon1" [(ngModel)]="operatorName"
+										name="operatorName">
+								</div></td>
+						</tr>
+
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Contact</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Operators contact number"
+										aria-describedby="basic-addon1" [(ngModel)]="operatorContact"
+										name="operatorContact">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Email</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Operator Email Address"
+										aria-describedby="basic-addon1" [(ngModel)]="operatorEmail"
+										name="operatorEmail">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Address</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Operators Address"
+										aria-describedby="basic-addon1" [(ngModel)]="operatorAddress"
+										name="operatorAddress">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Zipcode</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Operators Zip code"
+										aria-describedby="basic-addon1" [(ngModel)]="operatorZipCode"
+										name="operatorZipCode">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">License
+									Number</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Operators Licensee Number"
+										aria-describedby="basic-addon1"
+										[(ngModel)]="operatorLicenseeNumber"
+										name="operatorLicenseeNumber">
+								</div></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Car Damage Details</div>
+			<table class="table">
+				<tbody>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Description</font></td>
+						<td width="70%"><div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Provide damage description"
+									aria-describedby="basic-addon1" [(ngModel)]="damageDescription"
+									name="damageDescription">
+							</div></td>
+					</tr>
+
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Damage
+								Severity</font></td>
+						<td width="70%">
+
+							<div class="form-group btn dropdown-toggle">
+								<select class="form-control" id="sel1">
+									<option>Light</option>
+									<option>Moderate</option>
+									<option>Heavy</option>
+									<option>Rolled</option>
+									<option>Burned</option>
+								</select>
+							</div>
+						</td>
+				</tbody>
+			</table>
+		</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Other Vehicle/Property Damage
+				details</div>
+
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<td bgcolor="red" width="30%"><font color="white">Other
+								Vehicles Involved ?</font></td>
+						<td width="70%">
+							<!-- <div class="checkbox">
+								<label> <input type="checkbox" data-toggle="toggle-one"
+									(click)="toggleHobbies()">
+
+								</label>
+							</div> --> <ui-switch color="red" (change)="toggleHobbies()"></ui-switch>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div *ngIf="showHobbies">
+				<table class="table">
+					<tbody>
+
+
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Name</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Owner of other vehicle/property"
+										aria-describedby="basic-addon1" [(ngModel)]="partyName"
+										name="partyName">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Address</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Enter Address" aria-describedby="basic-addon1"
+										[(ngModel)]="partyAddress" name="partyAddress">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Phone</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Contact Number" aria-describedby="basic-addon1"
+										[(ngModel)]="partyContact" name="partyContact">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Damage
+									Description</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Provide Damage Description"
+										aria-describedby="basic-addon1"
+										[(ngModel)]="partyDamageDescription"
+										name="partyDamageDescription">
+								</div></td>
+						</tr>
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Drivable
+									Car</font></td>
+							<td width="70%"><div class="checkbox">
+									<label> <input type="checkbox" data-toggle="toggle-one"
+										checked data-toggle="toggle" [(ngModel)]="drivableCarInd"
+										name="drivableCarInd">
+
+									</label>
+								</div></td>
+						</tr>
+
+						<tr>
+							<td bgcolor="red" width="30%"><font color="white">Licensee
+									Plate</font></td>
+							<td width="70%"><div class="input-group">
+									<input type="text" class="form-control"
+										placeholder="Licensee Plate of Impacted Vehicle"
+										aria-describedby="basic-addon1"
+										[(ngModel)]="partyLicensePlate" name="partyLicensePlate">
+								</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel-heading">Select Damage Area</div>
+		<div class="wrapper">
+
+			<!-- img src="http://www.licensing.biz/cimages/c0f1a3a97bc0de97271f9813f7715bb3.png" -->
+			<img src="./app/images/Car.png" width="100%" height="100%" />
+
+			<canvas id="signature-pad" class="signature-pad" width="100%"
+				height="100%"></canvas>
+		</div>
+		<br />
+		<div class="jumbotron">
+			<div class="container">
+				<div class="panel panel-default">
+
+					<div class="panel-heading">Damage Photos</div>
+					<form>
+						<table class="table">
+							<tbody>
+								<tr>
+
+									<td width="45%">
+										<div id="camera1"></div>
+										<div class="input-group" name="photo-one">
+											<input type=button value="Capture"
+												(click)="take_snapshot('camera1')">
+										</div>
+									</td>
+									<td width="4%">
+										<div id="camera2"></div>
+										<div class="input-group" name="photo-one">
+											<input type=button value="Capture"
+												(click)="take_snapshot('camera2')">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td width="45%">
+										<div id="camera3"></div>
+										<div class="input-group" name="photo-one">
+											<input type=button value="Capture"
+												(click)="take_snapshot('camera3')">
+										</div>
+									</td>
+									<td width="45%">
+										<div id="camera4"></div>
+										<div class="input-group" name="photo-one">
+											<input type=button value="Capture"
+												(click)="take_snapshot('camera4')">
+										</div>
+									</td>
+								</tr>
+						</table>
+					</form>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">Signature</div>
+
+					<signature-pad backgroundImageView='AvisBudgetLogo.jpg'
+						bgcolor="green" canvasWidth="100px," canvasHeight="10px"
+						color="blue" placeholder="Provide Damage Description"
+						(onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"
+						[options]="{'penColor' : 'red'}"></signature-pad>
+					<!-- <signature-pad (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad> -->
+
+				</div>
+				<div class="text-center">
+					<button type="button" class="btn btn-primary btn-sm"
+						data-toggle="modal" (click)="createClaim()">Create Claim</button>
+				</div>
+				<div *ngIf="successClaim" class="alert alert-success box-msg"
+					role="alert">
+					Claim Number&nbsp;<strong>{{claimNumber}}</strong>&nbsp;created for
+					the incident record
+				</div>
+				<div *ngIf="failureClaim" class="alert alert-danger box-msg"
+					role="alert">Error occurred while creating claim. Please
+					re-try</div>
+
+			</div>
+		</div>
+
+
+		<!-- 		<h1>{{name}}</h1>
+		<p>
+			<strong>Email:</strong> {{email}}
+		</p>
+		<p>
+			<strong>Address:</strong> {{address.street}} {{address.city}},
+			{{address.state}}
+		</p>
+		<button class="btn btn-default btn-md" style="cursor: pointer;"
+			(click)="toggleHobbies()">{{showHobbies ? "Hide Hobbies" :
+			"Show Hobbies"}}</button>
+		<div *ngIf="showHobbies">
+			<h3>Car Photos</h3>
+			<ul>
+				<li *ngFor="let hobby of hobbies; let i = index">{{hobby}}
+					<button class="btn btn-success btn-delete btn-xs"
+						(click)="deleteHobby(i)">X</button>
+				</li>
+			</ul>
+			<form (submit)="addHobby(hobby.value)">
+				<label>Add Photo: </label><br /> <input type="text" #hobby /><br />
+			</form>
+		</div>
+		<hr />
+		<h3>Edit User</h3>
+		<form>
+			<label>Name: </label><br /> <input type="text" name="name"
+				[(ngModel)]="name" /><br /> <label>Email: </label><br /> <input
+				type="text" name="email" [(ngModel)]="email" /><br /> <label>Street:
+			</label><br /> <input type="text" name="address.street"
+				[(ngModel)]="address.street" /><br /> <label>City: </label><br />
+			<input type="text" name="address.city" [(ngModel)]="address.city" /><br />
+			<label>State: </label><br /> <input type="text" name="address.state"
+				[(ngModel)]="address.state" /><br />
+		</form>
+		<hr /> -->
+		<!-- <div id="my_camera"> </div><form>
+		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+	</form>
+	<div id="results">Your captured image will appear here</div>
+		 -->
+
+
+		<!--  <h3>Posts</h3>
+    <div *ngFor="let post of posts">
+        <h3>{{post.firstName}}</h3>
+        <p>{{post.lastName}}</p>
+    </div> -->

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Final</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+ <!--  <script src="./js/bootstrap.min"></script> -->
+ 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="damage.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="webcam.js"></script>
+  <script type="text/javascript" src="signature_pad.min.js"></script>
+  
+    
+</head>
+<body>
+  <app-root>Loading...</app-root><!-- <div id="my_camera"> </div><form>
+		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+	</form>
+	<div id="results">Your captured image will appear here...</div> -->
+</body>
+
+<!-- <script language="JavaScript">
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+	
+	
+	<script language="JavaScript">
+		function take_snapshot() {
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+				// display results in page
+				document.getElementById('results').innerHTML = 
+					'<h2>Here is your image:</h2>' + 
+					'<img src="'+data_uri+'"/>';
+					
+				
+				  Webcam.off("off");
+			} );
+			
+		
+				  
+		
+		}
+	</script> -->
+	<script>
+
+var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
+	  backgroundColor: 'rgba(255, 255, 255, 0)',
+	  penColor: 'rgb(0, 0, 0)'
+	});
+
+var signaturePad1 = new SignaturePad(document.getElementById('signature-pad1'), {
+	  backgroundColor: 'rgba(255, 255, 255, 0)',
+	  penColor: 'rgb(0, 0, 0)'
+	});
+	/* var saveButton = document.getElementById('save');
+	var cancelButton = document.getElementById('clear');
+
+	saveButton.addEventListener('click', function (event) {
+	  var data = signaturePad.toDataURL('image/png');
+
+	// Send data to server instead...
+	  window.open(data);
+	});
+
+	cancelButton.addEventListener('click', function (event) {
+	  signaturePad.clear();
+	});  */
+/* 
+function x {
+    $('#datetimepicker1').datetimepicker();
+}); */
+	</script>
+	
+	
+</html>
