@@ -1,0 +1,172 @@
+					
+body {
+  padding-top: 50px;
+}
+
+.navbar-default {
+    background-color:  #d4002a;
+    border-color: #d4002a;
+	background-image: none;	
+}
+
+.navbar-brand {
+    color:  #ffbbbc;
+	background-image: none;	
+	
+}
+
+.navbar-phone {
+    text-align: right; 
+    height: 40px; 
+    width: 30px; 
+    padding-top: 10px; 
+    position: absolute; 
+    right: 30px;	
+	
+}
+
+.starter-template {
+ padding: 10px 15px;
+}
+
+.cust-form-label{
+    text-align: left;
+}
+
+.lead {
+    
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+
+.cust-submit-section{
+    padding-bottom: 12px;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+.btn-primary {
+	background-color:  #d4002a;
+	background-image: none;	
+	border-color: #d4002a;
+}
+
+.panel-default {
+	padding: 10px 15px;
+}
+
+.panel-group .panel-heading a {
+    display: block;
+    position: relative;
+	text-decoration: none;
+}
+
+.panel-group .panel-heading a :visited{
+	text-decoration: none;
+}
+
+.panel-group .panel-heading a:before {
+	/* content: url('../app/images/icon_collapse.svg') ;   */
+	content: url('../images/icon_collapse.svg') ;
+  text-align:center;
+}
+
+.panel-group .panel-heading a.collapsed:before {
+    content: url('../images/icon_expand.svg') ;
+text-align:center;
+}
+
+/* .panel-title1 {
+text-align:center;
+} */
+
+.bg-primarya{
+	background-color: #c61729;
+	padding: 10px 15px;
+	color: white;
+	font-family: Calibri
+}
+
+.imageMap {
+height : 346px !important ;
+}
+
+.pdf {
+height : 346px;
+width : 346px;
+}
+
+.imageMap1 {
+height : 210px !important ;
+}
+
+
+#modal-background{
+   width: 100%;
+   height: 100%;
+   background-color: #000000;
+   position: fixed;
+   top: 0; left: 0;
+   display: none;
+   z-index: 99;
+}
+
+#modal-content{
+   background-color: #FFFFFF;
+   width: 500px;
+   height: 500px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   margin-left: -250px;
+   margin-top: -250px;
+   z-index: 100;
+}
+
+
+@media screen and (max-width: 995px OR max-height: 700px) {
+  background-color: #4286f4;
+}
+
+
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+
+/* 
+.glyphicon-refresh-animate {
+    -animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+} */
+
+
+
+#bloc1, #bloc2
+{
+    display:inline;
+}
